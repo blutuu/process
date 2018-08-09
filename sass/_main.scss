@@ -8,7 +8,7 @@
 	margin: 10px auto;
 }
 .box {
-	@include square(150px, 5px);
+	@include square(100px, 5px);
 
 	border: solid 1px;
 	background-color: $blue;

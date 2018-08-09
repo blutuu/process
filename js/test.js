@@ -11,6 +11,10 @@ function makeBoxes(count) {
 		newElement.style.backgroundColor = colors[i%colors.length];
 		mainBody.appendChild(newElement);
 	}
+
+	mainBody.addEventListener('click', function(e) {
+		e.target.parentNode.removeChild(e.target);
+	}, false);
 }
 
 makeBoxes(17);
