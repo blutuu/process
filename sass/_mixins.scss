@@ -1,0 +1,16 @@
+@mixin square($size, $radius: 0) {
+	width: $size;
+	height: $size;
+	border-radius: $radius;
+}
+
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: '';
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
