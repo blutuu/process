@@ -14,3 +14,15 @@
 		clear: both;
 	}
 }
+
+@mixin background($image, $size: cover) {
+	background-image: url('/images/' + $image);
+	background-size: $size;
+	background-repeat: no-repeat;
+}
+
+@mixin card_shape($height, $width: 100px) {
+	width: $width;
+	height: $height or ($width * .75);
+	border-radius: 10px;
+}

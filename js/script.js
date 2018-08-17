@@ -17,4 +17,18 @@ function makeBoxes(count) {
 	}, false);
 }
 
-makeBoxes(17);
+
+function countUp() {
+	var number = 0;
+
+	function increment() {
+		return console.log(number++);
+	}
+
+	increment();
+	increment();
+	increment();
+	increment();
+}
+
+countUp();

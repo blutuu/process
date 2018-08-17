@@ -1,17 +1,38 @@
-.main {
-	overflow: hidden;
-	width: 50%;
-	min-width: 500px;
-	border: solid 1px;
-	border-radius: 5px;
+* {
+	box-sizing: border-box;
+}
+body {
 	background-color: $offwhite;
-	margin: 10px auto;
+	@include background('bridge.png');
 }
-.box {
-	@include square(100px, 5px);
-
+.main {
+	width: 100%;
+	max-width: 1280px;
 	border: solid 1px;
-	background-color: $blue;
-	margin: 5px;
-	float: left;
+	background-color: white;
+	margin: 0px auto;
+
+	> div {
+		height: 124px;
+		border: solid 1px;
+	}
 }
+
+
+/*================================
+=            Benefits            =
+================================*/
+
+.oe_card_container {
+	@include clearfix;
+
+	background-color: $oe_green;
+	display: inline-block;
+}
+
+.oe_card {
+	@include card_shape($default, 250px);
+	@extend %card
+}
+
+/*=====  End of Benefits  ======*/
