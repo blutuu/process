@@ -1,17 +1,8 @@
 .main {
-	overflow: hidden;
 	width: 50%;
 	min-width: 500px;
 	border: solid 1px;
 	border-radius: 5px;
 	background-color: $offwhite;
 	margin: 10px auto;
-}
-.box {
-	@include square(100px, 5px);
-
-	border: solid 1px;
-	background-color: $blue;
-	margin: 5px;
-	float: left;
 }

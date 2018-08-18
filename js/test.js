@@ -16,5 +16,3 @@ function makeBoxes(count) {
 		e.target.parentNode.removeChild(e.target);
 	}, false);
 }
-
-makeBoxes(17);
