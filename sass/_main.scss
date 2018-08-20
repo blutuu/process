@@ -6,8 +6,13 @@ body {
 	@include background('bridge.png');
 }
 .main {
+<<<<<<< HEAD
 	width: 100%;
 	max-width: 1280px;
+=======
+	width: 50%;
+	min-width: 500px;
+>>>>>>> b070f70d57e23d7e88adba940da5c93da60c2eb9
 	border: solid 1px;
 	background-color: white;
 	margin: 0px auto;
@@ -17,6 +22,7 @@ body {
 		border: solid 1px;
 	}
 }
+<<<<<<< HEAD
 
 
 /*================================
@@ -36,3 +42,5 @@ body {
 }
 
 /*=====  End of Benefits  ======*/
+=======
+>>>>>>> b070f70d57e23d7e88adba940da5c93da60c2eb9

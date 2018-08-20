@@ -16,6 +16,7 @@ function makeBoxes(count) {
 		e.target.parentNode.removeChild(e.target);
 	}, false);
 }
+<<<<<<< HEAD:js/script.js
 
 
 function countUp() {
@@ -32,3 +33,5 @@ function countUp() {
 }
 
 countUp();
+=======
+>>>>>>> b070f70d57e23d7e88adba940da5c93da60c2eb9:js/test.js
