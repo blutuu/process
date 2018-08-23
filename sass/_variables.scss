@@ -3,8 +3,9 @@ $red: red($blue);
 $offwhite: #EEE8D6;
 $orangedrab: #FF6633;
 $skyblue: #33CCFF;
+$grey: #707070;
 
-/* OE Colors */
+// OE Colors
 $oe_orange: #F08721;
 $oe_lightorange: #F1AE20;
 $oe_green: #148742;
@@ -13,5 +14,10 @@ $oe_blue: #1172A1;
 $oe_lightblue: #00ADEF;
 $oe_darkblue: #044C66;
 
-/* values */
+// values
 $default: null;
+$cardwidth: 250px;
+$cardheight: $cardwidth * 0.75;
+
+// Fonts
+$segoe: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;

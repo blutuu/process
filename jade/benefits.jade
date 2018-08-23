@@ -8,5 +8,14 @@ html
 body
   .main
     section.oe_card_container
-     - for (var i = 0; i < 9; i++) 
-      .oe_card
+      - var links = ["Home Site", "Info Page", "FAQ"];
+      - for (var i = 0; i < 9; i++)
+        .oe_card
+          .ben_logo
+          .linkpreview
+            ul
+              for link in links
+                li
+                  a(href="#")= link
+          .seemore
+            a(href="#") #[span More]

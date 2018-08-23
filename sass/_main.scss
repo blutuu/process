@@ -2,10 +2,18 @@
 	box-sizing: border-box;
 }
 body {
+	font-family: $segoe;
 	background-color: $offwhite;
 	@include background('bridge.png');
+
+	a {
+		text-decoration: none;
+		font-size: .95rem;
+	}
 }
 .main {
+	@include clearfix;
+
 	width: 50%;
 	min-width: 500px;
 	border: solid 1px;
@@ -23,15 +31,87 @@ body {
 ================================*/
 
 .oe_card_container {
-	@include clearfix;
+	@include centerFloatedGrid;
 
-	background-color: $oe_green;
-	display: inline-block;
 }
 
 .oe_card {
-	@include card_shape($default, 250px);
-	@extend %card
+	@include card_shape($default, $cardwidth);
+	@extend %card;
+
+	.ben_logo {
+		@include background('sussex.png', 75%);
+
+		height: $cardwidth * 0.3;
+		position: relative;
+		background-position: 20px center;
+
+		&:after {
+			content: "";
+			display: block;
+			width: 90%;
+			border-bottom: solid 1px $grey;
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			transform: translateX(-50%);
+		}
+	}
+
+	.linkpreview {
+		
+		ul {
+			list-style-type: none;
+			// line-height: 1.4rem;
+			margin: 0;
+			margin-top: 7px;
+		}
+	}
+
+	.seemore {
+		@include centerabsolute();
+
+		width: 100%;
+		text-align: right;
+		background-color: $oe-blue;
+		color: white;
+		position: absolute;
+		bottom: 0px;
+		transition: .3s;
+
+		&:after {
+			content: "";
+			position: absolute;
+			width: 0;
+			padding: 2px;
+			background-color: $oe_orange;
+			left: 50%;
+			bottom: -4px;
+			transition: .3s;
+		}
+
+		a {
+			color: white;
+			display: block;
+			padding: 4px 2rem;
+			transition: .3s;
+		}
+
+		&:hover {
+			bottom: 3px;
+			transition: .5s;
+
+			a {
+				text-shadow: 0 0 5px black;
+				transition: .5s;
+			}
+
+			&:after {
+				animation: expandright .5s ease .1s;
+				animation-fill-mode: forwards;
+			}
+		}
+	}
 }
 
 /*=====  End of Benefits  ======*/
