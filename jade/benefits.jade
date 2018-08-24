@@ -5,12 +5,20 @@ html
     link(rel="stylesheet", href="/css/style.css")
     script(src="/js/script.js", defer)
 
+<!--======================-->
+<!--=     variables      =-->
+<!--======================-->
+
+- var links = ["Home Site", "Info Page", "FAQ"];
+- var categories = ["highmark", "eap", "hartford", "ssa", "flex", "vspdelta", "general", "comp", "cobra"];
+
+<!--====  End of variables  ====-->
+
 body
   .main
     section.oe_card_container
-      - var links = ["Home Site", "Info Page", "FAQ"];
       - for (var i = 0; i < 9; i++)
-        .oe_card
+        .oe_card(id= categories[i])
           .ben_logo
           .linkpreview
             ul

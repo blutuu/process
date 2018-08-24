@@ -79,12 +79,12 @@ body {
 		bottom: 0px;
 		transition: .3s;
 
-		&:after {
+		&:before, &:after {
 			content: "";
 			position: absolute;
 			width: 0;
-			padding: 2px;
 			background-color: $oe_orange;
+			padding: 2px 0;
 			left: 50%;
 			bottom: -4px;
 			transition: .3s;
@@ -99,16 +99,20 @@ body {
 
 		&:hover {
 			bottom: 3px;
-			transition: .5s;
+			transition: .3s;
 
 			a {
 				text-shadow: 0 0 5px black;
 				transition: .5s;
 			}
 
+			&:before {
+				width: 51%;
+				left: 0;
+			}
+
 			&:after {
-				animation: expandright .5s ease .1s;
-				animation-fill-mode: forwards;
+				width: 51%;
 			}
 		}
 	}
