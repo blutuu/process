@@ -15,6 +15,17 @@
 	}
 }
 
+@mixin centerFloatedGrid() {
+	float: right;
+	position: relative;
+	left: -50%;
+
+	& > * {
+		position: relative;
+		left: 50%;
+	}
+}
+
 @mixin background($image, $size: cover) {
 	background-image: url('/images/' + $image);
 	background-size: $size;
@@ -23,6 +34,22 @@
 
 @mixin card_shape($height, $width: 100px) {
 	width: $width;
-	height: $height or ($width * .75);
-	border-radius: 10px;
+	height: $height or ($cardheight);
+	border-radius: 6px;
+}
+
+@mixin centerabsolute($centerxy: false) {
+	@if $centerxy {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	@else {
+		left: 50%;
+		transform: translateX(-50%);
+	}	
+}
+
+@mixin glow($color: $oe_blue) {
+	box-shadow: 0 0 5px $color, 0 0 10px $color, 0 0 15px $color, 0 0 20px $color;
 }
