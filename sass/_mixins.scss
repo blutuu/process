@@ -26,6 +26,7 @@
 	}
 }
 
+// Apply a background to the selected element. 
 @mixin background($image, $size: cover) {
 	background-image: url('/images/' + $image);
 	background-size: $size;
