@@ -26,6 +26,7 @@
 	}
 }
 
+// Apply a background to the selected element. 
 @mixin background($image, $size: cover) {
 	background-image: url('/images/' + $image);
 	background-size: $size;
@@ -51,5 +52,14 @@
 }
 
 @mixin glow($color: $oe_blue) {
-	box-shadow: 0 0 5px $color, 0 0 10px $color, 0 0 15px $color, 0 0 20px $color;
+	box-shadow: 0 0 0 $color, 0 0 5px $color, 0 0 10px $color, 0 0 15px $color, 0 0 20px $color;
+}
+
+@mixin textglow($color: $oe_blue, $spread: false) {
+	@if $spread {
+		text-shadow: 0 0 0 $color, 0 0 5px $color, 0 0 10px $color, 0 0 15px $color, 0 0 20px $color;
+	} @else {
+		text-shadow: 0 0 0 $color, 0 0 2px $color, 0 0 4px $color;
+	}
+	
 }

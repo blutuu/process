@@ -12,10 +12,10 @@ body {
 	}
 }
 .main {
+	@include clearfix;
+	
 	width: 100%;
 	max-width: 1280px;
-	@include clearfix;
-
 	min-width: 500px;
 	border: solid 1px;
 	background-color: white;
@@ -40,7 +40,20 @@ body {
 	@include card_shape($default, $cardwidth);
 	@extend %card;
 
+	// Adding category specific logos
+	@for $i from 1 through length($logos) {
+		&##{nth($logos, $i)} .ben_logo {
+			@include background(nth($logos, $i) + ".png", 80%);
+		}
+	}
+
+	&:hover {
+		transform: scale(.95);
+		transition: .5s;
+	}
+
 	.ben_logo {
+		// Adding a default logo
 		@include background('sussex.png', 75%);
 
 		height: $cardwidth * 0.3;
@@ -56,6 +69,10 @@ body {
 			left: 50%;
 			bottom: 0;
 			transform: translateX(-50%);
+		}
+
+		&:hover {
+			cursor: pointer;
 		}
 	}
 
@@ -73,9 +90,8 @@ body {
 		@include centerabsolute();
 
 		width: 100%;
-		text-align: right;
-		background-color: $oe-blue;
-		color: white;
+		text-align: center;
+		background-color: $oe_blue;
 		position: absolute;
 		bottom: 0px;
 		transition: .3s;
@@ -84,7 +100,7 @@ body {
 			content: "";
 			position: absolute;
 			width: 0;
-			background-color: $oe_orange;
+			background-color: $oe_blue;
 			padding: 2px 0;
 			left: 50%;
 			bottom: -4px;
@@ -92,28 +108,32 @@ body {
 		}
 
 		a {
-			color: white;
+			font-size: 1rem;
+			font-weight: bold;
+			color: $oe_blue;
 			display: block;
-			padding: 4px 2rem;
+			padding: 1px 2rem;
 			transition: .3s;
 		}
 
 		&:hover {
+			// background-color: $oe_lightblue;
 			bottom: 3px;
 			transition: .3s;
 
 			a {
-				text-shadow: 0 0 5px black;
+				color: white;
+				// text-shadow: 0 0 0px white;
+				// @include textglow(white, false);
 				transition: .5s;
 			}
 
-			&:before {
+			&:before, &:after {
 				width: 51%;
-				left: 0;
 			}
 
-			&:after {
-				width: 51%;
+			&:before {
+				left: 0;
 			}
 		}
 	}
