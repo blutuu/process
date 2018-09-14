@@ -33,6 +33,7 @@
 	background-repeat: no-repeat;
 }
 
+// defined card shape with rounded corners.
 @mixin card_shape($height, $width: 100px) {
 	width: $width;
 	height: $height or ($cardheight);
