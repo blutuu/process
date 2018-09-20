@@ -46,12 +46,28 @@ body {
 			@include background(nth($logos, $i) + ".png", 80%);
 		}
 	}
-
+	
+	transition: .5s;
 
 	&.active {
-		@include glow();
+		@include glow($oe_lightblue);
 		transform: scale(.95);
 		transition: .5s;
+
+		.ben_logo {
+			transform: scale(1) !important;
+			transition: .5s;
+
+			&:before {
+				opacity: 0 !important;
+				transition: .3s;
+			}
+
+			&:after {
+				opacity: 1 !important;
+			}
+				
+		}
 	}
 
 	&:hover {
