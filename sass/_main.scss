@@ -1,5 +1,7 @@
 * {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 body {
 	font-family: $segoe;
@@ -21,6 +23,7 @@ body {
 	border: solid 1px;
 	background-color: white;
 	margin: 0px auto;
+	position: relative;
 
 	.container {
 		@include clearfix;
@@ -66,7 +69,25 @@ body {
 			&:after {
 				opacity: 1 !important;
 			}
-				
+		}
+
+		.seemore {
+			background-color: $oe_lightblue;
+			bottom: 3px;
+
+			a {
+				color: white;
+				transition: .5s;
+			}
+
+			&:before, &:after {
+				width: 51%;
+				padding-top: 3px;
+			}
+
+			&:before {
+				left: 0;
+			}
 		}
 	}
 
@@ -174,14 +195,11 @@ body {
 		}
 
 		&:hover {
-			// background-color: $oe_lightblue;
 			bottom: 3px;
 			transition: .3s;
 
 			a {
 				color: white;
-				// text-shadow: 0 0 0px white;
-				// @include textglow(white, false);
 				transition: .5s;
 			}
 
@@ -197,3 +215,14 @@ body {
 }
 
 /*=====  End of Benefits  ======*/
+
+.more_modal {
+	width: 630px;
+	height: 890px;
+	background-color: transparentize(#fff, 0.5);
+	box-shadow: -1px 1px 5px;
+	border-radius: 10px;
+	position: absolute;
+	right: 25px;
+	top: 15px;
+}

@@ -1,9 +1,11 @@
+// Creates square item with choice of corner radius.
 @mixin square($size, $radius: 0) {
 	width: $size;
 	height: $size;
 	border-radius: $radius;
 }
 
+// Fixes container of floated items
 @mixin clearfix() {
 	&:before,
 	&:after {
@@ -14,6 +16,7 @@
 		clear: both;
 	}
 }
+
 
 @mixin centerFloatedGrid() {
 	float: right;
@@ -64,3 +67,4 @@
 	}
 	
 }
+
