@@ -19,7 +19,6 @@ body {
 	width: 100%;
 	max-width: 1280px;
 	min-width: 500px;
-	height: 100vh;
 	border: solid 1px;
 	background-color: white;
 	margin: 0px auto;
@@ -218,11 +217,69 @@ body {
 
 .more_modal {
 	width: 630px;
-	height: 890px;
-	background-color: transparentize(#fff, 0.5);
+	// height: 590px;
+	background-color: transparentize(#fff, 0.15);
 	box-shadow: -1px 1px 5px;
 	border-radius: 10px;
+	overflow: hidden;
 	position: absolute;
-	right: 25px;
 	top: 15px;
+	right: 45px;
+	// opacity: 0;
+	// z-index: -1;
+	animation: fade_toback .5s forwards;
+
+	&.active {
+		right: 45px;
+		opacity: 0;
+		z-index: 2;
+
+		animation: fade_tofront .5s .5s forwards;
+	}
+
+	h1.more_header {
+		margin: 40px 0 0 20px;
+		color: lighten(black, 25%);
+		font-weight: 600;
+	}
+
+	.more_links {
+		max-height: 400px;
+		margin: 20px;
+		overflow-y: scroll;
+		font-size: 1.8rem;
+
+		ul {
+			list-style-type: none;
+
+			li:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+// Dims the screen and prevents clicking elements under it.
+.dimmer {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	z-index: -1;
+	background-color: transparentize(lighten(black, 30%), 0.5);
+	transition: .5s;
+
+	&.active {
+		opacity: 1;
+		z-index: 1;
+		transition: .5s;
+	}
+}
+
+// Sets transition to none. This will be removed after page load 
+// so the elements won't animate until after that time.
+.no-transition {
+	transition: none !important;
 }
