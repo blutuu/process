@@ -17,9 +17,20 @@ $(document).ready(function() {
 	// Clicking the card logo will activate the card.
 	$('.oe_card').find('.ben_logo').on('click', function(){
 		event.stopPropagation();
+		var card_image = $(this).parent('.oe_card').find('.ben_logo').css('background-image');
+		var card_name = $(this).parent('.oe_card').attr('name');
+		card_image = card_image.replace('url(', '').replace(')','').replace(/"/g, "");
 
 		$('.oe_card').removeClass('active');
 		$(this).parent('.oe_card').toggleClass('active');
+
+		// Adding the title to the modal
+		$('.more_modal').find('.more_header').html(card_name);
+
+		// Adding the logo to the modal
+		$('.more_modal').find('.more_logo').attr('src', card_image);
+
+
 		$('.more_modal, .dimmer').addClass('active');
 
 	});

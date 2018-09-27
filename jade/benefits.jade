@@ -12,7 +12,7 @@ html
 <!--======================-->
 
 - var links = ["Home Site", "Info Page", "FAQ"];
-- var categories = ["highmark", "eap", "hartford", "ssa", "flex", "vspdelta", "cobra", "comp", "general"];
+- var categories = {highmark: "Highmark", eap: "EAP", hartford: "Hartford", ssa: "SSA", flex: "Flex", vspdelta: "VSP/Delta", cobra: "COBRA/HIPAA", comp: "Worker's Compensation", general: "General", test: "Test"};
 - var morelinks = ["Annual Women's Health and Cancer Rights Act Notification", "Baby Blueprints Flyer", "Gold Medical Summary Plan Description Gym Membership Discounts", "Healthwire Highmark BCBS Customer Claim Form", "Highmark BCBS Presentation", "In-Network Pharmacy Vaccination Providers", "Medical Aid Units", "Men's Health Prevention", "My Care Navigator", "Member Discounts", "Participant Instructions", "Physician's Letter", "PPO Gold Summary of Benefits"];
 
 <!--====  End of variables  ====-->
@@ -20,8 +20,8 @@ html
 body
   .main
     section.oe_card_container
-      - for (var i = 0; i < 9; i++)
-        .no-transition.oe_card(id= categories[i])
+      - each val, key in categories
+        .no-transition.oe_card(id=key, name=val)
           .ben_logo.no-transition
           .linkpreview
             ul

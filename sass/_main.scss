@@ -224,28 +224,24 @@ body {
 	overflow: hidden;
 	position: absolute;
 	top: 15px;
-	right: 45px;
-	// opacity: 0;
-	// z-index: -1;
-	animation: fade_toback .5s forwards;
+	right: 0px;
+	opacity: 0;
+	z-index: -1;
+	animation: fade_toback .5s 0s backwards;
 
 	&.active {
-		right: 45px;
-		opacity: 0;
-		z-index: 2;
-
 		animation: fade_tofront .5s .5s forwards;
 	}
 
 	h1.more_header {
-		margin: 40px 0 0 20px;
+		margin: 40px 0 0 30px;
 		color: lighten(black, 25%);
 		font-weight: 600;
 	}
 
 	.more_links {
 		max-height: 400px;
-		margin: 20px;
+		margin: 40px;
 		overflow-y: scroll;
 		font-size: 1.8rem;
 
@@ -255,6 +251,23 @@ body {
 			li:hover {
 				text-decoration: underline;
 			}
+		}
+	}
+
+	.more_logo {
+		height: 100px;
+		float: right;
+		margin-right: 40px;
+		transition: .3s;
+
+		&:hover {
+			cursor: pointer;
+			transform: translateY(-10px);
+			transition: .3s;
+		}
+
+		&:after {
+			content: "Click for website";
 		}
 	}
 }
