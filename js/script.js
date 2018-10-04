@@ -4,8 +4,8 @@ $(document).ready(function() {
 	$('.no-transition').each(function(index, el) {
 
 		setTimeout(function() {
-			$(el).removeClass('no-transition');
-		}, 10);
+			$(el).removeClass('no-transition').removeClass('hide');
+		}, 1000);
 
 	});
 
@@ -31,18 +31,8 @@ $(document).ready(function() {
 		// Adding the logo to the modal.
 		$('.more_modal').find('.more_logo').css('background-image', card_image);
 
-		// Activating the modal and opening the modal.
-		$('.more_modal, .dimmer').addClass('active');
-
-		// Activating the tooltip after a delay
-		setTimeout(function() {
-			$('.cust_tooltip').removeClass('inactive');
-		}, 3000);
-
-		// Deactivating the tooltip after a delay.
-		setTimeout(function() {
-			$('.cust_tooltip').addClass('inactive');
-		}, 3000);
+		// Activating the dimmer and opening the modal.
+		$('.more_modal, .dimmer, .cust_tooltip').addClass('active');
 
 	});
 

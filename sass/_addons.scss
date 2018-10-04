@@ -70,8 +70,16 @@
 .cust_tooltip {
   @include tooltip("left", $oe_orange);
 
-  &.inactive {
-    opacity: 0;
-    left: 0;
+  // opacity: 0;
+  // left: 0;
+    
+  &.active {
+    animation: fadein_right .5s 2s forwards;
   }
+
+}
+
+/* Hides the element */
+.hide {
+  visibility: hidden;
 }
