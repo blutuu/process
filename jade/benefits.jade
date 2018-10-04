@@ -3,6 +3,7 @@ html
     meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
     title Benefits
     link(rel="stylesheet", href="/css/style.css")
+    script(src="none.js")
     script(src='https://code.jquery.com/jquery-3.3.1.min.js', defer)
     script(src="/js/script.js", defer)
 
@@ -31,12 +32,13 @@ body
           .seemore.no-transition
             a(href="#") #[span More]
 
-    .more_modal
+    .more_modal.active1
       h1.more_header Highmark
       .more_links
         ul
           for link in morelinks
             li
               a(href="#")= link
-      img.more_logo
+      .more_logo.hvr-float-shadow
+        .cust_tooltip.inactive Click here for website
   .dimmer

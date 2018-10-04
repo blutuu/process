@@ -43,6 +43,7 @@
 	border-radius: 6px;
 }
 
+// Center an element horizontally, vertically, or both.
 @mixin centerabsolute($centerxy: false) {
 	@if $centerxy {
 		top: 50%;
@@ -55,10 +56,12 @@
 	}	
 }
 
+// Add a glow behind an element with the chosen color. 
 @mixin glow($color: $oe_blue) {
 	box-shadow: 0 0 0 $color, 0 0 5px $color, 0 0 10px $color;
 }
 
+// Add glow to text with the chosen color. 
 @mixin textglow($color: $oe_blue, $spread: false) {
 	@if $spread {
 		text-shadow: 0 0 0 $color, 0 0 15px $color, 0 0 30px $color;
@@ -68,3 +71,60 @@
 	
 }
 
+// Generate a pseudo triangle.
+@mixin pseudoTriangle($direction: "left", $size: 10px, $color: $oe_orange) {
+	&:before {
+		content: "";
+		position: absolute;
+		border: solid $size transparent;
+
+		@if $direction == "left" {
+			border-left: solid $size $color;
+			right: $size * -2;
+			top: 50%;
+			transform: translateY(-50%);
+
+		} @elseif $direction == "right" {
+
+		} @elseif $direction == "top" {
+
+		} @elseif $direction == "bottom" {
+
+		}
+	}
+}
+
+// Generate a custom tooltip.
+@mixin tooltip($direction: "left", $bgcolor: none) {
+	// border: solid 1px;
+	position: absolute;
+	text-align: center;
+	padding:0 10px;
+	background-color: $bgcolor;
+
+	@if $direction == "left" {
+		@include pseudoTriangle("left", 12px);
+		left: -70%;
+		top: 50%;
+		transform: translateY(-50%);
+
+	} @elseif $direction == "right" {
+		right: -65%;
+		top: 50%;
+		transform: translateY(-50%);
+
+	} @elseif $direction == "top" {
+		width: 170px;
+		width: max-content;
+		top: -20%;
+		left: 50%;
+		transform: translateX(-50%);
+
+	} @elseif $direction == "bottom" {
+		width: 170px;
+		width: max-content;
+		bottom: -20%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
