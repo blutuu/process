@@ -43,6 +43,7 @@
 	border-radius: 6px;
 }
 
+// Center an element horizontally, vertically, or both.
 @mixin centerabsolute($centerxy: false) {
 	@if $centerxy {
 		top: 50%;
@@ -55,10 +56,12 @@
 	}	
 }
 
+// Add a glow behind an element with the chosen color. 
 @mixin glow($color: $oe_blue) {
 	box-shadow: 0 0 0 $color, 0 0 5px $color, 0 0 10px $color;
 }
 
+// Add glow to text with the chosen color. 
 @mixin textglow($color: $oe_blue, $spread: false) {
 	@if $spread {
 		text-shadow: 0 0 0 $color, 0 0 15px $color, 0 0 30px $color;
@@ -66,5 +69,14 @@
 		text-shadow: 0 0 0 $color, 0 0 2px $color, 0 0 4px $color;
 	}
 	
+}
+
+// Generate a pseudo triangle.
+@mixin pseudoTriangle($direction: "left", $size: 20px) {
+	&:before {
+		content: "";
+		width: $size;
+		height: $size;
+	}
 }
 
