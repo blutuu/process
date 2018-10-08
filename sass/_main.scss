@@ -268,8 +268,13 @@ body {
 		&:hover {
 			cursor: pointer;
 			transition: .3s;
-		}
 
+			.cust_tooltip {
+			    opacity: 1;
+			    left: -70%;
+			    transition: left .5s, opacity .5s;
+  			}
+		}
 	}
 }
 

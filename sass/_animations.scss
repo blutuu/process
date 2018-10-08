@@ -35,3 +35,12 @@
 		opacity: 1;
 	}
 }
+@keyframes fadeout_right {
+	0% {
+
+	}
+	100% {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+}

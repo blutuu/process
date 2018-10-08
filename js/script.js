@@ -12,6 +12,9 @@ $(document).ready(function() {
 	// Clicking anywhere on the screen will deactivate the cards.
 	$(document).on('click', function() {
 		$('.oe_card, .more_modal, .dimmer').removeClass('active');
+		
+		// Dectivating the tooltip
+		$('.cust_tooltip').addClass('inactive');
 	});
 
 	// Clicking the card logo will activate the card.
@@ -32,7 +35,17 @@ $(document).ready(function() {
 		$('.more_modal').find('.more_logo').css('background-image', card_image);
 
 		// Activating the dimmer and opening the modal.
-		$('.more_modal, .dimmer, .cust_tooltip').addClass('active');
+		$('.more_modal, .dimmer').addClass('active');
+
+		// Activating the tooltip after a delay.
+		setTimeout(function() {
+			$('.cust_tooltip').removeClass('inactive');
+
+			// Deactivating the tooltip after a delay.
+			setTimeout(function() {
+				$('.cust_tooltip').addClass('inactive');
+			}, 5000);
+		}, 3000);
 
 	});
 

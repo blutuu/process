@@ -68,15 +68,17 @@
 
 /* Basic tooltip popup styles */
 .cust_tooltip {
-  @include tooltip("left", $oe_orange);
+  @include tooltip("left", $oe_lightblue, white);
 
-  // opacity: 0;
-  // left: 0;
-    
-  &.active {
-    animation: fadein_right .5s 2s forwards;
+  border-radius: 5px 0 0 5px;
+  opacity: 1;
+  transition: .5s;
+
+  &.inactive {
+    opacity: 0;
+    left: 0;
+    transition: left .5s, opacity .5s;
   }
-
 }
 
 /* Hides the element */
