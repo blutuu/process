@@ -31,7 +31,7 @@
 
 // Apply a background to the selected element. 
 @mixin background($image, $size: cover) {
-	background-image: url('/SiteAssets/Images/benefitPageImages/' + $image);
+	background-image: url('/images/' + $image);
 	background-size: $size;
 	background-repeat: no-repeat;
 }
