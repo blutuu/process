@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	var card_image,
+		card_name;
 
 	// Removes the ".no-transition" class when the page loads.
 	$('.no-transition').each(function(index, el) {
@@ -21,8 +23,8 @@ $(document).ready(function() {
 	$('.oe_card').find('.ben_logo').on('click', function(){
 		event.stopPropagation();
 		
-		var card_image = $(this).parent('.oe_card').find('.ben_logo').css('background-image');
-		var card_name = $(this).parent('.oe_card').attr('name');
+		card_image = $(this).parent('.oe_card').find('.ben_logo').css('background-image');
+		card_name = $(this).parent('.oe_card').attr('name');
 
 		// Activates the clicked card and deactivates the rest.
 		$('.oe_card').removeClass('active');
@@ -53,9 +55,31 @@ $(document).ready(function() {
 	$('.seemore').on('click', function() {
 		event.stopPropagation();
 
+		card_image = $(this).parent('.oe_card').find('.ben_logo').css('background-image');
+		card_name = $(this).parent('.oe_card').attr('name');
+
+		// Activates the clicked card and deactivates the rest.
 		$('.oe_card').removeClass('active');
 		$(this).parent('.oe_card').toggleClass('active');
+
+		// Adding the title to the modal.
+		$('.more_modal').find('.more_header').html(card_name);
+
+		// Adding the logo to the modal.
+		$('.more_modal').find('.more_logo').css('background-image', card_image);
+
+		// Activating the dimmer and opening the modal.
 		$('.more_modal, .dimmer').addClass('active');
+
+		// Activating the tooltip after a delay.
+		setTimeout(function() {
+			$('.cust_tooltip').removeClass('inactive');
+
+			// Deactivating the tooltip after a delay.
+			setTimeout(function() {
+				$('.cust_tooltip').addClass('inactive');
+			}, 5000);
+		}, 3000);
 		
 	});
 

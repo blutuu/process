@@ -51,13 +51,11 @@
   opacity: 0;
   z-index: -1;
   background-color: transparentize(lighten(black, 30%), 0.5);
-  display: none;
   transition: .5s;
 
   &.active {
     opacity: 1;
     z-index: 1;
-    display: initial;
     transition: .5s;
   }
 }
@@ -74,7 +72,8 @@
 
   border-radius: 5px 0 0 5px;
   opacity: 1;
-  line-height: 1.5rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
   transition: .5s;
 
   &.inactive {
