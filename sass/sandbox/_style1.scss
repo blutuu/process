@@ -1,0 +1,24 @@
+body {
+  background: blue;
+}
+
+/*@media screen and (min-width: 900px) {
+  body {
+    background: url('./large-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+}
+*/
+@media (max-width: 500px) {
+  body {
+    background: url('/images/sandbox/large-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 700px) {
+  body {
+    background: url('/images/sandbox/large-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+}
