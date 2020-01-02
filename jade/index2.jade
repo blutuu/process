@@ -5,13 +5,16 @@
 head
   title Network Performance
   // CSS
-  link(rel='stylesheet' type='text/css' href='css/style.css')
+  link(rel='stylesheet' type='text/css' href='css/style.css' media="only screen and (min-width:700px)")
   // javascript
   script(src='https://code.jquery.com/jquery-3.3.1.min.js', defer)
   script(type='text/javascript' src='js/script.js', defer)
+    
 body
   include includes/topbar.jade
-  h1 Helloooo 
-  // Large Image
-  img(src='images/sandbox/puppy.jpg' width='300px' height='200px' id='puppy')
+  #abovethefold
+    h1 Helloooo
+    // Large Image
+    img(src='images/sandbox/puppy.jpg' width='300px' height='200px' id='puppy')
+  h1.below Below the fold
  

@@ -6,7 +6,6 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel="stylesheet", href="/css/style.css")
   link(rel='icon' type='image/png' href='images/favicon.png')
-  script(src="/js/script.js", defer)
 
 body
   .main
@@ -15,7 +14,7 @@ body
       include includes/topbar.jade
 
       .row
-        .one-half.column(style='margin-top: 25%')
+        .one-half.column(style='margin-top: 25%')#homeblock
           h4 Basic Page
           p
             | This index.html page is a placeholder with the CSS, font and favicon. It&apos;s just waiting for you to add some content! If you need some help hit up the 
@@ -26,3 +25,4 @@ body
     //
       End Document
       ––––––––––––––––––––––––––––––––––––––––––––––––––
+  script(src="/js/script.js", defer)

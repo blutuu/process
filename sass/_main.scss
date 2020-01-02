@@ -19,13 +19,23 @@ body {
 	width: 100%;
 	max-width: 1280px;
 	min-width: 500px;
-	background-color: white;
+	background-color: rgba(white, .7);
 	margin: 0px auto;
 	position: relative;
 
 	.container {
 		@include clearfix;
 	}
+}
+#homeblock {
+}
+
+#abovethefold {
+	// height: 650px;
+}
+
+.above {
+	background-color: white;
 }
 
 /*================================

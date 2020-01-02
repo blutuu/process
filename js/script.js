@@ -1,4 +1,29 @@
 $(document).ready(function() {
+
+function loadStyleSheet(src) {
+	if(document.createStylesheet) {
+		document.createStylesheet(src);
+	}
+	else {
+		var stylesheet = document.createElement('link');
+		stylesheet.href	= src;
+		stylesheet.type = 'text/css';
+		stylesheet.rel = 'stylesheet';
+		document.getElementsByTagName('head')[0].appendChild(stylesheet);
+	}
+}
+
+// Below the fold loading.
+window.onload = function() {
+	console.log('window done!');
+	loadStyleSheet('/css/style2.css');
+};
+
+
+
+/*================================
+=            Benefits            =
+================================*/
 	var card_image,
 		card_name;
 
